@@ -34,7 +34,7 @@
 
 # 🚀 주요 프로젝트
 
-## [Jetson Nano I2C Multi-Device Kernel Driver](https://github.com/clanadian/jetson-i2c-drivers.git)
+## [Jetson Nano I2C Multi-Device Kernel Driver](https://github.com/clanadian/jetson-i2c-drivers)
 
 Jetson Nano(Linux 4.9 L4T) 환경에서 MPU6050, EEPROM, OLED용
 Linux 캐릭터 디바이스 드라이버를 직접 구현했습니다.
@@ -50,7 +50,7 @@ Linux 캐릭터 디바이스 드라이버를 직접 구현했습니다.
 
 ---
 
-## [Raspberry Pi4 - FPGA SPI Custom Driver](https://github.com/clanadian/rpi4-spi-driver.git)
+## [Raspberry Pi4 - FPGA SPI Custom Driver](https://github.com/clanadian/rpi4-spi-driver)
 
 FPGA(AES-128)와 Raspberry Pi를 SPI로 연결하는
 커스텀 Linux 커널 드라이버를 구현했습니다.
@@ -66,7 +66,7 @@ FPGA(AES-128)와 Raspberry Pi를 SPI로 연결하는
 
 ---
 
-## [STM32 CAN Gateway & UDS](https://github.com/clanadian/stm32-can-gateway-cluster.git)
+## [STM32 CAN Gateway & UDS](https://github.com/clanadian/stm32-can-gateway-cluster)
 
 FreeRTOS 기반 차량 CAN 네트워크와
 Central Gateway를 구현했습니다.
