@@ -36,47 +36,31 @@
 
 ## [Jetson Nano I2C Multi-Device Kernel Driver](https://github.com/clanadian/jetson-i2c-drivers)
 
-Jetson Nano(Linux 4.9 L4T) 환경에서 MPU6050, EEPROM, OLED용
-Linux 캐릭터 디바이스 드라이버를 직접 구현했습니다.
+Jetson Nano에서 MPU6050·EEPROM·OLED용 Linux I2C 캐릭터 디바이스 드라이버를 구현했습니다.
 
-- Device Tree Overlay 등록
-- probe/remove 기반 Driver Lifecycle 관리
-- EEPROM 기반 센서 캘리브레이션
-- Tegra I2C Zero-length Write 제약 분석 및 해결
-
-**Tech**
+* Device Tree Overlay 및 probe/remove 기반 드라이버 생명주기 구성
+* EEPROM을 활용한 센서 캘리브레이션 데이터 영속 저장
+* Tegra I2C Zero-length Write 제약 분석 및 우회 처리
 
 `Linux Kernel` `I2C` `Device Tree` `ioctl`
 
----
+## [Raspberry Pi 4 FPGA SPI Custom Driver](https://github.com/clanadian/rpi4-spi-driver)
 
-## [Raspberry Pi4 - FPGA SPI Custom Driver](https://github.com/clanadian/rpi4-spi-driver)
+Raspberry Pi 4와 AES-128 FPGA 모듈을 연결하는 커스텀 SPI 커널 드라이버를 구현했습니다.
 
-FPGA(AES-128)와 Raspberry Pi를 SPI로 연결하는
-커스텀 Linux 커널 드라이버를 구현했습니다.
+* spidev 기반 통신 검증 후 커스텀 SPI 드라이버로 전환
+* ioctl 기반 Full-Duplex 송수신 인터페이스 설계
+* Linux와 FPGA 간 하드웨어·소프트웨어 통합 검증
 
-- spidev 프로토타입 구현
-- Custom SPI Driver 전환
-- ioctl 기반 Full-Duplex 인터페이스 설계
-- FPGA와 Linux 간 HW/SW 연동
-
-**Tech**
-
-`SPI` `Linux Kernel` `FPGA`
-
----
+`Linux Kernel` `SPI` `FPGA` `ioctl`
 
 ## [STM32 CAN Gateway & UDS](https://github.com/clanadian/stm32-can-gateway-cluster)
 
-FreeRTOS 기반 차량 CAN 네트워크와
-Central Gateway를 구현했습니다.
+FreeRTOS 기반 다중 ECU CAN 네트워크와 Central Gateway를 구현했습니다.
 
-- Multi ECU CAN Network
-- Gateway Routing
-- VW Golf Mk6 계기판 Reverse Engineering
-- ISO 14229 UDS 진단 통신 구현
-
-**Tech**
+* ECU 간 CAN 메시지 라우팅 및 통합 제어
+* VW Golf Mk6 계기판 CAN 프로토콜 분석
+* ISO 14229 기반 UDS 진단 통신 구현
 
 `STM32` `FreeRTOS` `CAN` `UDS`
 
@@ -93,20 +77,6 @@ Xilinx Kria KR260 기반 Embedded Linux 플랫폼을 개발하고 있습니다.
 - DPU 기반 CNN 추론
 - ROS2 연동
 - HW/SW Co-design
-
----
-
-# 📌 Pinned Repository
-
-아래 저장소에서 다음 프로젝트를 확인할 수 있습니다.
-
-- Linux Kernel Driver
-- Embedded Linux / BSP
-- FPGA HW/SW Co-design
-- STM32 Embedded System
-- Automotive CAN
-
-👇 Pinned Repository를 확인해주세요.
 
 ---
 
