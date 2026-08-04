@@ -79,7 +79,7 @@ AES-128 FPGA 모듈을 제어하는 SPI 프로토콜과 Linux 드라이버를 �
 
 ---
 
-## FPGA I2C Multi-Slave Door Lock(https://github.com/clanadian/basys3-i2c-doorlock)
+## [FPGA I2C Multi-Slave Door Lock](https://github.com/clanadian/basys3-i2c-doorlock)
 
 OLED와 EEPROM을 공유하는 I2C Master 및 디지털 도어락을 설계했습니다.
 
