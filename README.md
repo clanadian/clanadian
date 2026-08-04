@@ -1,132 +1,90 @@
 # 우윤지 (Yunji Woo)
 
-### Embedded Software Engineer
+### Embedded Linux / BSP Engineer
 
-MCU 펌웨어부터 Linux 커널 드라이버까지  
-하드웨어를 제어하는 임베디드 소프트웨어를 개발합니다.
+MCU 펌웨어부터 Linux Device Driver와 FPGA–PS 통합까지,
+하드웨어와 소프트웨어의 경계를 연결하는 임베디드 시스템을 개발합니다.
 
-STM32·FreeRTOS 기반 제어 및 통신 시스템과  
-Linux Device Driver·Device Tree 기반 하드웨어 연동을 경험했습니다.
-
-하드웨어의 동작 원리와 통신 프로토콜을 이해하고,  
-플랫폼 환경에 맞는 소프트웨어 계층을 설계하는 데 관심이 있습니다.
+Device Tree, register map, 메모리 및 통신 프로토콜을 기반으로
+하드웨어 인터페이스를 분석하고 플랫폼 소프트웨어로 구현하는 데 관심이 있습니다.
 
 ---
 
-# 🛠 Tech Stack
+## Core Skills
 
-### Language
-
-![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Verilog](https://img.shields.io/badge/Verilog-005B99?style=flat-square)
-
-### Firmware / Embedded
-
-![STM32](https://img.shields.io/badge/STM32-03234B?style=flat-square&logo=stmicroelectronics&logoColor=white)
-![FreeRTOS](https://img.shields.io/badge/FreeRTOS-000000?style=flat-square)
-
-`Embedded C` `STM32 HAL` `FreeRTOS` `ADC` `PWM` `Interrupt`
-
-### Embedded Linux
-
-![Linux Kernel](https://img.shields.io/badge/Linux%20Kernel-FCC624?style=flat-square&logo=linux&logoColor=black)
-![Jetson Nano](https://img.shields.io/badge/Jetson%20Nano-76B900?style=flat-square&logo=nvidia&logoColor=white)
-
-`Linux Device Driver` `Character Device` `Device Tree` `ioctl`
-
-### Interface / Protocol
-
-`I2C` `SPI` `UART` `CAN` `UDS` `Bluetooth`
-
-### Tools
-
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Vivado](https://img.shields.io/badge/Vivado-orange?style=flat-square)
-
-`GCC` `GDB` `Make` `PetaLinux`
+- **Embedded Linux / BSP**: Linux Device Driver, Device Tree, PetaLinux, MMIO, ioctl
+- **Firmware / RTOS**: Embedded C, STM32, FreeRTOS, Interrupt, ADC, PWM
+- **HW–SW Interface**: AXI4-Lite, I2C, SPI, UART, CAN, UDS
+- **Languages**: C, C++, Python, SystemVerilog
+- **Tools**: Git, GCC, GDB, CMake, Make, Vivado
 
 ---
 
-# 🚀 주요 프로젝트
+# 주요 프로젝트
 
-## [STM32 CAN Gateway & UDS](https://github.com/clanadian/stm32-can-gateway-cluster)
+## [KR260 ADAS HW–SW Integration Platform](KR260_저장소_링크)
 
-STM32와 FreeRTOS를 기반으로 다중 ECU 차량 네트워크와  
-실차 계기판 연동 시스템을 구현했습니다.
+Xilinx Kria KR260에서 카메라 입력부터 FPGA 추론 가속기와
+TurtleBot 제어까지 연결하는 Embedded Linux 플랫폼을 개발하고 있습니다.
 
-- ADC 입력을 기반으로 RPM·Speed·Coolant 차량 데이터 생성
-- FreeRTOS 태스크 기반 50ms·100ms·1000ms CAN 프레임 스케줄링
-- ECU 간 CAN 메시지 라우팅 및 Central Gateway 구현
-- VW Golf Mk6 계기판 CAN Payload 분석 및 실기기 연동
-- ISO 14229 기반 UDS 진단 통신 구현
+**담당: PS 소프트웨어 및 시스템 통합**
 
-`Embedded C` `STM32` `FreeRTOS` `CAN` `UDS`
+- V4L2 MMAP 기반 카메라 캡처와 멀티스레드 C++ 영상 파이프라인 구현
+- RGB UINT8/NCHW 모델 입력과 signed INT8/NHWC HLS 인터페이스 사이의 adapter 설계
+- AXI4-Lite register map과 HLS `m_axi` DDR 접근 구조 분석
+- PL–PS 인터페이스 계약과 재현 가능한 golden test vector 구성
+- YOLO raw head decode/NMS 및 전체 처리 지연 계측
+- 변경되는 PL 빌드에 대응하기 위한 Device Tree Overlay 구조 설계
+- 향후 RPU 위험 판단 및 ROS2 TurtleBot 제어 시스템 통합
+
+`KR260` `Embedded Linux` `C++` `V4L2` `AXI` `Device Tree` `HLS` `ROS2`
 
 ---
 
-## [Jetson Nano I2C Multi-Device Kernel Driver](https://github.com/clanadian/jetson-i2c-drivers)
+## [STM32 CAN Gateway & UDS](링크)
 
-Jetson Nano에서 MPU6050·EEPROM·OLED용  
-Linux I2C 캐릭터 디바이스 드라이버를 구현했습니다.
+FreeRTOS 기반 다중 ECU CAN gateway와 UDS 진단 통신을 구현했습니다.
 
-- Device Tree 기반 디바이스 등록
-- probe/remove 기반 드라이버 생명주기 구성
-- EEPROM을 활용한 캘리브레이션 데이터 영속 저장
+- 주기별 CAN frame scheduling
+- ECU 간 message routing
+- 실차 계기판 연동
+- ISO 14229 기반 UDS 구현
+
+`STM32` `FreeRTOS` `CAN` `UDS`
+
+---
+
+## [Jetson Nano I2C Multi-Device Kernel Driver](링크)
+
+MPU6050·EEPROM·OLED를 제어하는 Linux I2C 드라이버와
+유저스페이스 애플리케이션을 구현했습니다.
+
+- Device Tree 및 probe/remove 기반 드라이버 구성
+- EEPROM 기반 센서 캘리브레이션 데이터 관리
 - Tegra I2C Zero-length Write 제약 분석 및 우회
-- 커널 드라이버부터 유저스페이스 애플리케이션까지 통합 검증
 
 `Linux Kernel` `I2C` `Device Tree` `Character Device`
 
 ---
 
-## [Raspberry Pi 4 FPGA SPI Custom Driver](https://github.com/clanadian/rpi4-spi-driver)
+## [Raspberry Pi 4 FPGA SPI Custom Driver](링크)
 
-Raspberry Pi 4와 AES-128 FPGA 모듈을 연결하는  
-SPI 통신 프로토콜과 커스텀 Linux 드라이버를 구현했습니다.
+AES-128 FPGA 모듈을 제어하는 SPI 프로토콜과 Linux 드라이버를 구현했습니다.
 
-- FPGA 레지스터 맵 및 SPI 트랜잭션 프로토콜 설계
-- spidev 기반 통신 검증 후 커스텀 SPI 드라이버로 전환
-- ioctl 기반 Full-Duplex 송수신 인터페이스 구현
-- 커널 전송 계층과 유저스페이스 프로토콜 계층 분리
-- FPGA 암호화 영상 수신·복호화·출력 전 과정 검증
+- FPGA register map 및 SPI transaction protocol 설계
+- spidev 검증 후 custom kernel driver로 전환
+- ioctl 기반 송수신 및 암호화 영상 통합 검증
 
-`Linux Kernel` `SPI` `FPGA` `ioctl` `AES-128`
+`Linux Kernel` `SPI` `FPGA` `ioctl`
 
 ---
 
-## [FPGA I2C Multi-Slave Door Lock](https://github.com/clanadian)
+## FPGA I2C Multi-Slave Door Lock
 
-FPGA에서 I2C Master를 직접 설계하고  
-OLED와 EEPROM을 연동한 디지털 도어락을 구현했습니다.
+OLED와 EEPROM을 공유하는 I2C Master 및 디지털 도어락을 설계했습니다.
 
-- START·STOP·ACK 처리를 포함한 I2C Master FSM 설계
-- OLED와 EEPROM이 공유하는 I2C 버스 중재 로직 구현
-- 비밀번호 및 실패 횟수 EEPROM 영속 저장
-- SCL 9펄스 기반 I2C Bus Clear 루틴 구현
-- 테스트벤치와 실기기를 통한 전체 동작 검증
+- START·STOP·ACK를 처리하는 I2C Master FSM
+- 다중 slave 제어와 bus recovery
+- 테스트벤치 및 실기기 검증
 
-`SystemVerilog` `FPGA` `I2C` `FSM` `EEPROM`
-
----
-
-# 🔭 진행 중인 프로젝트
-
-## KR260 Embedded AI Platform
-
-Xilinx Kria KR260 기반 Embedded Linux 및  
-온디바이스 AI 실행 환경을 개발하고 있습니다.
-
-- PetaLinux 기반 시스템 이미지 구성
-- Device Tree 및 주변장치 인터페이스 설정
-- C++ 기반 영상 전처리·추론 파이프라인 개발
-- DPU 기반 CNN 추론
-- ROS2 시스템 연동
-- FPGA 가속기와 소프트웨어 간 인터페이스 설계
-
----
-
-# 📫 Contact
-
-📧 woo.yunji2000@gmail.com
+`SystemVerilog` `FPGA` `I2C` `FSM`
