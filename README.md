@@ -24,20 +24,18 @@ Device Tree, register map, 메모리 및 통신 프로토콜을 기반으로
 
 ## [KR260 ADAS HW–SW Integration Platform](KR260_저장소_링크)
 
-Xilinx Kria KR260에서 카메라 입력부터 FPGA 추론 가속기와
-TurtleBot 제어까지 연결하는 Embedded Linux 플랫폼을 개발하고 있습니다.
+AMD Kria KR260(Zynq UltraScale+ MPSoC)에서 카메라 입력부터 FPGA 기반 YOLO 추론과
+UART 안전 상태 출력까지 연결하는 Embedded Linux ADAS 플랫폼입니다.
 
-**담당: PS 소프트웨어 및 시스템 통합**
+**담당: PS(APU/RPU) 소프트웨어 및 HW–SW 시스템 통합**
 
-- V4L2 MMAP 기반 카메라 캡처와 멀티스레드 C++ 영상 파이프라인 구현
-- RGB UINT8/NCHW 모델 입력과 signed INT8/NHWC HLS 인터페이스 사이의 adapter 설계
-- AXI4-Lite register map과 HLS `m_axi` DDR 접근 구조 분석
-- PL–PS 인터페이스 계약과 재현 가능한 golden test vector 구성
-- YOLO raw head decode/NMS 및 전체 처리 지연 계측
-- 변경되는 PL 빌드에 대응하기 위한 Device Tree Overlay 구조 설계
-- 향후 RPU 위험 판단 및 ROS2 TurtleBot 제어 시스템 통합
+- 카메라 입력·전처리 및 YOLO raw head decode 구현
+- 골든 벡터 기반 PL–PS 인터페이스 검증 체계 구축
+- AXI4-Lite 레지스터 맵과 HLS DDR 접근 구조 분석 및 인터페이스 계약 정의
+- RPU 안전 상태 UART 인터페이스(`CLEAR`/`SLOW`/`STOP`) 설계와 검증 vector 제공
+- 실보드 수령 후 PetaLinux bring-up, Device Tree, PL–PS end-to-end 검증 예정
 
-`KR260` `Embedded Linux` `C++` `V4L2` `AXI` `Device Tree` `HLS` `ROS2`
+`C++` `V4L2` `Zynq UltraScale+ MPSoC` `AXI4-Lite` `RPU` `PetaLinux 예정` `Device Tree 예정`
 
 ---
 
@@ -48,7 +46,6 @@ FreeRTOS 기반 다중 ECU CAN gateway와 UDS 진단 통신을 구현했습니�
 - 주기별 CAN frame scheduling
 - ECU 간 message routing
 - 실차 계기판 연동
-- ISO 14229 기반 UDS 구현
 
 `STM32` `FreeRTOS` `CAN` `UDS`
 
