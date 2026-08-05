@@ -22,7 +22,7 @@ Device Tree, register map, 메모리 및 통신 프로토콜을 기반으로
 
 # 주요 프로젝트
 
-## [KR260 ADAS HW–SW Integration Platform](KR260_저장소_링크)
+## [KR260 ADAS HW–SW Integration Platform](https://github.com/clanadian/kr260-adas-platform)
 
 AMD Kria KR260(Zynq UltraScale+ MPSoC)에서 카메라 입력부터 FPGA 기반 YOLO 추론과
 UART 안전 상태 출력까지 연결하는 Embedded Linux ADAS 플랫폼입니다.
@@ -39,7 +39,7 @@ UART 안전 상태 출력까지 연결하는 Embedded Linux ADAS 플랫폼입니
 
 ---
 
-## [STM32 CAN Gateway & UDS](링크)
+## [STM32 CAN Gateway & UDS](https://github.com/clanadian/stm32-can-gateway-cluster)
 
 FreeRTOS 기반 다중 ECU CAN gateway와 UDS 진단 통신을 구현했습니다.
 
@@ -51,7 +51,7 @@ FreeRTOS 기반 다중 ECU CAN gateway와 UDS 진단 통신을 구현했습니�
 
 ---
 
-## [Jetson Nano I2C Multi-Device Kernel Driver](링크)
+## [Jetson Nano I2C Multi-Device Kernel Driver](https://github.com/clanadian/jetson-i2c-drivers)
 
 MPU6050·EEPROM·OLED를 제어하는 Linux I2C 드라이버와
 유저스페이스 애플리케이션을 구현했습니다.
@@ -64,7 +64,7 @@ MPU6050·EEPROM·OLED를 제어하는 Linux I2C 드라이버와
 
 ---
 
-## [Raspberry Pi 4 FPGA SPI Custom Driver](링크)
+## [Raspberry Pi 4 FPGA SPI Custom Driver](https://github.com/clanadian/rpi4-spi-driver)
 
 AES-128 FPGA 모듈을 제어하는 SPI 프로토콜과 Linux 드라이버를 구현했습니다.
 
@@ -73,15 +73,3 @@ AES-128 FPGA 모듈을 제어하는 SPI 프로토콜과 Linux 드라이버를 �
 - ioctl 기반 송수신 및 암호화 영상 통합 검증
 
 `Linux Kernel` `SPI` `FPGA` `ioctl`
-
----
-
-## [FPGA I2C Multi-Slave Door Lock](https://github.com/clanadian/basys3-i2c-doorlock)
-
-OLED와 EEPROM을 공유하는 I2C Master 및 디지털 도어락을 설계했습니다.
-
-- START·STOP·ACK를 처리하는 I2C Master FSM
-- 다중 slave 제어와 bus recovery
-- 테스트벤치 및 실기기 검증
-
-`SystemVerilog` `FPGA` `I2C` `FSM`
