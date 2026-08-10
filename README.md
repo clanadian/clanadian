@@ -22,7 +22,7 @@ Device Tree, register map, 메모리 및 통신 프로토콜을 기반으로
 
 # 주요 프로젝트
 
-## [KR260 ADAS HW–SW Integration Platform] (개발중)
+## [KR260 ADAS HW–SW Integration Platform](https://github.com/clanadian/kr260-adas-platform) (개발중)
 
 AMD Kria KR260(Zynq UltraScale+ MPSoC)에서 카메라 입력부터 FPGA 기반 YOLO 추론과
 UART 안전 상태 출력까지 연결하는 Embedded Linux ADAS 플랫폼입니다.
