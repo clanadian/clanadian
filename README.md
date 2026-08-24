@@ -22,26 +22,26 @@ Device Tree, register map, 메모리 및 통신 프로토콜을 기반으로
 
 # 주요 프로젝트
 
-## [KR260 ADAS HW–SW Integration Platform](https://github.com/clanadian/kr260-adas-platform) (개발중)
+## [FPGA CNN 가속기 기반 ADAS 인식 시스템](https://github.com/clanadian/kr260-adas-platform](https://github.com/clanadian/adas_project_sub) (개발중)
 
-AMD Kria KR260(Zynq UltraScale+ MPSoC)에서 카메라 입력부터 FPGA 기반 YOLO 추론과
-UART 안전 상태 출력까지 연결하는 Embedded Linux ADAS 플랫폼입니다.
+Jetson Nano와 Arty Z7-20을 연동해 객체 탐지, FPGA ROI 분류 및 TurtleBot 안전 제어를 구현한 Embedded Linux ADAS 시스템입니다.
 
-**담당: PS(APU/RPU) 소프트웨어 및 HW–SW 시스템 통합**
+**담당: PS·Jetson 소프트웨어 및 HW–SW 통합**
 
-- 카메라 입력·전처리 및 YOLO raw head decode 구현
-- 골든 벡터 기반 PL–PS 인터페이스 검증 체계 구축
-- AXI4-Lite 레지스터 맵과 HLS DDR 접근 구조 분석 및 인터페이스 계약 정의
-- RPU 안전 상태 UART 인터페이스(`CLEAR`/`SLOW`/`STOP`) 설계와 검증 vector 제공
-- 실보드 수령 후 PetaLinux bring-up, Device Tree, PL–PS end-to-end 검증 예정
+- Jetson 카메라 입력, YOLOv8n 후보 탐지 및 ROI 전처리
+- PetaLinux 기반 TCP 서버와 AXI4-Lite·DMA 가속기 제어
+- 분류 후처리 및 `CLEAR`/`SLOW`/`STOP` 안전 판단
+- UART 기반 TurtleBot 제어와 실보드 E2E 검증
 
-`C++` `V4L2` `Zynq UltraScale+ MPSoC` `AXI4-Lite` `RPU` `PetaLinux 예정` `Device Tree 예정`
+`C/C++` `V4L2` `TensorRT` `Zynq-7000` `AXI4-Lite` `PetaLinux` `TCP/IP` `UART`
 
 ---
 
 ## [STM32 CAN Gateway & UDS](https://github.com/clanadian/stm32-can-gateway-cluster)
 
 FreeRTOS 기반 다중 ECU CAN gateway와 UDS 진단 통신을 구현했습니다.
+
+**담당: Board A Engine data**
 
 - 주기별 CAN frame scheduling
 - ECU 간 message routing
