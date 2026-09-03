@@ -28,7 +28,7 @@ Jetson Nano와 Arty 27-20을 연동해 객체 탐지, FPGA ROI 분류 및 Turtle
 
 **담당: PS & Jetson 소프트웨어 및 HW-SW 통합**
 
-- Jetson 카메라 입력, YOLOv5n 후보 탐지 및 R0I 전처리
+- Jetson 카메라 입력, YOLOv8n 후보 탐지 및 R0I 전처리
 - PetaLinux 기반 TCP 서버와 AXI4-Lite:DMA 가속기 제어
 - 분류 후처리 및 `CLEAR`/`SLOW`/`STOP 안전 판단
 - UART 기반 TurtleBot 제어와 실보드 E2E 검증
