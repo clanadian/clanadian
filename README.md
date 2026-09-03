@@ -22,7 +22,7 @@ Device Tree, register map, 메모리 및 통신 프로토콜을 기반으로
 
 # 주요 프로젝트
 
-## [FPGA CNN 가속기 기반 ADAS 인식 시스템](https://aithub.com /clanadian/adas_project_sub)
+## [FPGA CNN 가속기 기반 ADAS 인식 시스템](https://github.com/clanadian/adas_project_sub)
 
 Jetson Nano와 Arty 27-20을 연동해 객체 탐지, FPGA ROI 분류 및 TurtleBot 전 제어를 구현한 Embedded Linux ADAS 시스템입니다
 
@@ -33,7 +33,7 @@ Jetson Nano와 Arty 27-20을 연동해 객체 탐지, FPGA ROI 분류 및 Turtle
 - 분류 후처리 및 `CLEAR`/`SLOW`/`STOP 안전 판단
 - UART 기반 TurtleBot 제어와 실보드 E2E 검증
 
-`C/C++` `V4L2` `Zynq-7000` `AXI4-Lite` `PetaLinux`` TCP/IP `UART`
+`C/C++` `V4L2` `Zynq-7000` `AXI4-Lite` `PetaLinux` `TCP/IP` `UART`
 
 ---
 
